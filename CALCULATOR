@@ -1,0 +1,124 @@
+from tkinter import *
+import math
+
+def toplama():
+    sayi1 = float(sayi1_giris.get())
+    sayi2 = float(sayi2_giris.get())
+    sonuc = sayi1 + sayi2
+    sonuc_etiketi.config(text="Sonuç: " + str(sonuc))
+
+def cikarma():
+    sayi1 = float(sayi1_giris.get())
+    sayi2 = float(sayi2_giris.get())
+    sonuc = sayi1 - sayi2
+    sonuc_etiketi.config(text="Sonuç: " + str(sonuc))
+
+def carpma():
+    sayi1 = float(sayi1_giris.get())
+    sayi2 = float(sayi2_giris.get())
+    sonuc = sayi1 * sayi2
+    sonuc_etiketi.config(text="Sonuç: " + str(sonuc))
+
+def bolme():
+    sayi1 = float(sayi1_giris.get())
+    sayi2 = float(sayi2_giris.get())
+    if sayi2 != 0:
+        sonuc = sayi1 / sayi2
+        sonuc_etiketi.config(text="Sonuç: " + str(sonuc))
+    else:
+        sonuc_etiketi.config(text="Hata: Sıfıra bölme hatası!")
+
+def sin():
+    sayi = float(sayi1_giris.get())
+    sonuc = math.sin(math.radians(sayi))
+    sonuc_etiketi.config(text="Sinüs: " + str(sonuc))
+
+def cos():
+    sayi = float(sayi1_giris.get())
+    sonuc = math.cos(math.radians(sayi))
+    sonuc_etiketi.config(text="Kosinüs: " + str(sonuc))
+
+def tan():
+    sayi = float(sayi1_giris.get())
+    sonuc = math.tan(math.radians(sayi))
+    sonuc_etiketi.config(text="Tanjant: " + str(sonuc))
+
+def karekok():
+    sayi = float(sayi1_giris.get())
+    sonuc = math.sqrt(sayi)
+    sonuc_etiketi.config(text="Karekök: " + str(sonuc))
+
+def log():
+    sayi = float(sayi1_giris.get())
+    sonuc = math.log10(sayi)
+    sonuc_etiketi.config(text="Logaritma: " + str(sonuc))
+
+def us_alma():
+    sayi1 = float(sayi1_giris.get())
+    sayi2 = float(sayi2_giris.get())
+    sonuc = sayi1 ** sayi2
+    sonuc_etiketi.config(text="Sonuç: " + str(sonuc))
+
+def faktoriyel():
+    sayi = int(sayi1_giris.get())
+    sonuc = math.factorial(sayi)
+    sonuc_etiketi.config(text="Faktöriyel: " + str(sonuc))
+
+def menu_goster():
+    menu_etiketi = Label(pencere, text="İşlemler:")
+    menu_etiketi.pack()
+
+    toplama_buton = Button(pencere, text="Toplama", command=toplama)
+    toplama_buton.pack()
+
+    cikarma_buton = Button(pencere, text="Çıkarma", command=cikarma)
+    cikarma_buton.pack()
+
+    carpma_buton = Button(pencere, text="Çarpma", command=carpma)
+    carpma_buton.pack()
+
+    bolme_buton = Button(pencere, text="Bölme", command=bolme)
+    bolme_buton.pack()
+
+    sin_buton = Button(pencere, text="Sinüs", command=sin)
+    sin_buton.pack()
+
+    cos_buton = Button(pencere, text="Kosinüs", command=cos)
+    cos_buton.pack()
+
+    tan_buton = Button(pencere, text="Tanjant", command=tan)
+    tan_buton.pack()
+
+    karekok_buton = Button(pencere, text="Karekök", command=karekok)
+    karekok_buton.pack()
+
+    log_buton = Button(pencere, text="Logaritma", command=log)
+    log_buton.pack()
+
+    us_alma_buton = Button(pencere, text="Üs Alma", command=us_alma)
+    us_alma_buton.pack()
+
+    faktoriyel_buton = Button(pencere, text="Faktöriyel", command=faktoriyel)
+    faktoriyel_buton.pack()
+
+pencere = Tk()
+pencere.title("Hesap Makinesi")
+
+sayi1_etiketi = Label(pencere, text="Sayı 1:")
+sayi1_etiketi.pack()
+
+sayi1_giris = Entry(pencere)
+sayi1_giris.pack()
+
+sayi2_etiketi = Label(pencere, text="Sayı 2:")
+sayi2_etiketi.pack()
+
+sayi2_giris = Entry(pencere)
+sayi2_giris.pack()
+
+sonuc_etiketi = Label(pencere, text="Sonuç:")
+sonuc_etiketi.pack()
+
+menu_goster()
+
+pencere.mainloop()
